@@ -1,5 +1,5 @@
 //LEKCE 1
-/*
+
 describe('Homework', async () => {
 
     it('should open page and create screenshot', async () => {
@@ -66,7 +66,7 @@ describe('Homework', async () => {
 
     });
 
-});*/
+});
 
 //LEKCE 4
 
