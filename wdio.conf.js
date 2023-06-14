@@ -1,4 +1,16 @@
+import fs from 'fs';
+
+const passedDirectory = 'screenshots/passed';
+const failedDirectory = 'screenshots/failed';
+
+function createIfNotExists(dir) {
+   if (!fs.existsSync(dir)) {
+       fs.mkdirSync(dir, { recursive: true });
+   }
+}
+
 export const config = {
+    //automationProtocol: 'devtools',
     runner: 'local',
     specs: [
         './test/specs/*.e2e.js'
@@ -7,6 +19,8 @@ export const config = {
         // './test/specs/examples/**/*.js'
     ],
     suites: {
+        login: ['./test/specs/login.e2e.js'],
+        applications: ['./test/specs/applications.e2e.js'],
         exercise: ['./test/specs/exercise.e2e.js'],
         homework: ['./test/specs/homework/*.e2e.js'],
         lesson_01: ['./test/specs/examples/lesson-01/**/*.e2e.js'],
@@ -58,5 +72,17 @@ export const config = {
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
+    },
+
+    afterTest: (test, context,{ error, result, duration, passed, retries }) => {
+        const screenshotName = (`${test.parent}__${test.title}.png`).replace(/ /g, '_');
+        if (passed === true) {
+            createIfNotExists(passedDirectory);
+            console.log(`${passedDirectory}/${screenshotName}`);
+            browser.saveScreenshot( `${passedDirectory}/${screenshotName}`);
+        } else {
+            createIfNotExists(failedDirectory);
+            browser.saveScreenshot(`${failedDirectory}/${screenshotName}`);
+        }
     }
 }
