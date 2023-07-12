@@ -9,6 +9,12 @@ function createIfNotExists(dir) {
    }
 }
 
+function deleteFiles(dir) {
+    fs.rm(dir, { recursive: true }, err => {
+        if (err) console.log(err);
+    });
+}
+
 export const config = {
     //automationProtocol: 'devtools',
     runner: 'local',
@@ -72,6 +78,10 @@ export const config = {
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
+    },
+
+    onPrepare: (config, capabilities) => {
+        deleteFiles("screenshots");
     },
 
     afterTest: (test, context,{ error, result, duration, passed, retries }) => {
