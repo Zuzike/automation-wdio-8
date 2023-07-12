@@ -211,7 +211,7 @@ describe('Homework - registration success', async () => {
         await expect(registrationButton).toBeClickable();
     });
     
-    xit('user registration and validity check', async () => {
+    it('user registration and validity check', async () => {
 
         const wholeNameField = $('input#name');
         await wholeNameField.setValue('Solo Lomos');
@@ -283,6 +283,3 @@ describe('Homework - registration failur', async () => {
         await expect (feedbackAlert).toHaveText('Heslo musí obsahovat minimálně 6 znaků, velké i malé písmeno a číslici');
     });
 });
-
-//LEKCE 6
-
