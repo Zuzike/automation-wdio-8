@@ -1,7 +1,7 @@
 import {username, password} from '../fixtures.js'
 
 //LEKCE 1
-/*
+
 describe('Homework', async () => {
 
     it('should open page and create screenshot', async () => {
@@ -29,7 +29,7 @@ describe('Czechitas Find Elements', async () => {
        const emailField = $('#email');
        console.log(await emailField.getHTML());
 
-       const passwField = $('[name="password"]]');
+       const passwField = $('[name="password"]');
        console.log(await passwField.getHTML());
 
        const passwCheckField = $('#password-confirm');
@@ -105,10 +105,10 @@ describe('Homework - registration success', async () => {
     it('user registration and validity check', async () => {
 
         const wholeNameField = $('input#name');
-        await wholeNameField.setValue('Bobana Domáca');
+        await wholeNameField.setValue('Bob Builder');
  
         const emailField = $('#email');
-        await emailField.setValue('bobana@gmail.com');
+        await emailField.setValue('bobbuilder@gmail.com');
  
         const passwField = $('#password');
         await passwField.setValue('Heslo123')
@@ -282,7 +282,7 @@ describe('Homework - registration failur', async () => {
         const feedbackAlert = $('.invalid-feedback');
         await expect (feedbackAlert).toHaveText('Heslo musí obsahovat minimálně 6 znaků, velké i malé písmeno a číslici');
     });
-});*/
+});
 
 //LEKCE 6
 
