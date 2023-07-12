@@ -16,7 +16,6 @@ function deleteFiles(dir) {
 }
 
 export const config = {
-    //automationProtocol: 'devtools',
     runner: 'local',
     specs: [
         './test/specs/*.e2e.js'
