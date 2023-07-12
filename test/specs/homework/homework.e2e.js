@@ -283,3 +283,4 @@ describe('Homework - registration failur', async () => {
         await expect (feedbackAlert).toHaveText('Heslo musí obsahovat minimálně 6 znaků, velké i malé písmeno a číslici');
     });
 });
+//LEKCE 6 = reportovacie nástroje oddelené súbory
