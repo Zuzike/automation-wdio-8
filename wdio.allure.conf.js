@@ -12,9 +12,9 @@ export const config = deepmerge(baseConfig, {
         './test/specs/homework/*.e2e.js'
     ],
 
-    /*
-    Konfigurace reportování
-     */
+    
+    //Konfigurace reportování
+     
     reporters: [
         'spec',
         [video, {
@@ -30,9 +30,9 @@ export const config = deepmerge(baseConfig, {
         }]
     ],
 
-    /*
-    Definice potřebných hooků
-    */
+    
+    //Definice potřebných hooků
+    
     onPrepare: (config, capabilities) => {
         // remove previous tmp files
         fs.rmdir(allureTmpDirectory, { recursive: true }, err => {

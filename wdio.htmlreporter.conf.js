@@ -9,9 +9,9 @@ export const config = deepmerge(baseConfig, {
         './test/specs/homework/*.e2e.js'
     ],
 
-    /*
-    Konfigurace reportování
-     */
+    
+    //Konfigurace reportování
+     
     reporters: [
         'spec',
         ["html-nice", {
@@ -31,9 +31,9 @@ export const config = deepmerge(baseConfig, {
         timeout: 60000
     },
 
-    /*
-    Definice potřebných hooků
-    */
+    
+    //Definice potřebných hooků
+    
     onPrepare: (config, capabilities) => {
         let reportAggregator = new ReportAggregator({
             outputDir: reportsDirectory,
