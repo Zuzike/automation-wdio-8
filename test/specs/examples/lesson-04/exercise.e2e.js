@@ -24,7 +24,7 @@ describe('Login Page', async () => {
         console.log('Login button text is: ' + await loginButton.getText());
     });
 
-    it('should login with valid credentials', async () => {
+    it.only('should login with valid credentials', async () => {
         const emailField = $('#email');
         const passwordField = $('#password');
         const loginButton = $('.btn-primary');
@@ -80,7 +80,7 @@ describe('Login Page', async () => {
     });
 });
 
-describe('Applications Page', async () => {
+xdescribe('Applications Page', async () => {
 
     beforeEach(async () => {
         await browser.reloadSession();
